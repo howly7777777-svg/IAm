@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>I·Am — Dialogue with your inner self</title>
+  <style>
+    :root {
+      --bg-top: #f5d4a8;
+      --bg-bottom: #fff8ee;
+      --accent: #4ba3c7;
+      --text: #3d2e1f;
+      --muted: #6b5a48;
+      --card: rgba(255, 255, 255, 0.92);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(165deg, var(--bg-top), var(--bg-bottom));
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+    header { text-align: center; margin-bottom: 1.5rem; }
+    h1 { font-size: 2.25rem; margin: 0 0 0.25rem; letter-spacing: 0.02em; }
+    .tagline { color: var(--muted); font-size: 1.05rem; margin: 0; }
+    .lang-bar {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;
+      margin: 1.5rem 0;
+    }
+    .lang-bar button {
+      border: 1px solid rgba(75, 163, 199, 0.45);
+      background: var(--card);
+      color: var(--text);
+      padding: 0.4rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .lang-bar button.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.35rem;
+      box-shadow: 0 8px 32px rgba(61, 46, 31, 0.08);
+      margin-bottom: 1rem;
+    }
+    .card h2 { font-size: 1.15rem; margin: 0 0 0.75rem; color: var(--accent); }
+    .card ul { margin: 0; padding-left: 1.2rem; }
+    .card li { margin-bottom: 0.45rem; }
+    .pricing { font-size: 0.95rem; color: var(--muted); }
+    .links { text-align: center; margin-top: 1.5rem; }
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.75rem;
+      font-weight: 500;
+    }
+    .links a:hover { text-decoration: underline; }
+    footer { text-align: center; font-size: 0.8rem; color: var(--muted); margin-top: 2rem; }
+    [data-lang] { display: none; }
+    [data-lang].visible { display: block; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>I·Am</h1>
+      <p class="tagline" id="page-tagline">Dialogue with your inner self</p>
+    </header>
+
+    <nav class="lang-bar" aria-label="Language">
+      <button type="button" data-set-lang="en" class="active">English</button>
+      <button type="button" data-set-lang="zh-Hant">繁體中文</button>
+      <button type="button" data-set-lang="zh-Hans">简体中文</button>
+      <button type="button" data-set-lang="ja">日本語</button>
+      <button type="button" data-set-lang="ko">한국어</button>
+    </nav>
+
+    <!-- English -->
+    <div data-lang="en" class="visible">
+      <div class="card">
+        <h2>What is I·Am?</h2>
+        <p>I·Am is a personal growth app for inner dialogue—not religious doctrine. You choose a daily <em>Being</em> (who you are today), reflect with guided prompts, and design life through Be–Do–Have.</p>
+        <ul>
+          <li><strong>Today</strong> — daily gate, streak, and your chosen state of being</li>
+          <li><strong>Dialogue</strong> — 3,000+ on-device templates; optional BYOK AI (your API key)</li>
+          <li><strong>Life Design</strong> — Be, Do, Have weekly planning</li>
+          <li><strong>Morning &amp; evening</strong> — 900+ original inspiration quotes each (2+ years without repeats)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Premium</h2>
+        <p class="pricing">Monthly, yearly (first month free on yearly), or lifetime. Managed via Apple; 10% of profit donated. Details in the app.</p>
+      </div>
+      <div class="card">
+        <h2>Privacy-first</h2>
+        <p>Dialogues stay on your device by default. BYOK keys live in the iOS Keychain. We do not sell your dialogue data.</p>
+      </div>
+    </div>
+
+    <!-- Traditional Chinese -->
+    <div data-lang="zh-Hant">
+      <div class="card">
+        <h2>I·Am 是什麼？</h2>
+        <p>I·Am 是一款靈性個人成長 App，聚焦<strong>內在對話</strong>，非宗教教義。每日選擇你的 <em>Being</em>（今日的存在狀態），透過引導式對話反思，並以 Be–Do–Have 設計生命。</p>
+        <ul>
+          <li><strong>今日</strong> — 每日之門、連續節奏、今日 Being</li>
+          <li><strong>對話</strong> — 3,000+ 本機原創模版；可選 BYOK 深度 AI（自備 API）</li>
+          <li><strong>生命設計</strong> — Be、Do、Have 每週規劃</li>
+          <li><strong>早晚推播</strong> — 各 900+ 句原創啟發語（可用兩年以上不重複）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>進階方案</h2>
+        <p class="pricing">月訂、年訂（年訂享首月免費）、或終身買斷。由 Apple 管理；利潤 10% 用於捐贈。詳見 App 內說明。</p>
+      </div>
+      <div class="card">
+        <h2>隱私優先</h2>
+        <p>對話預設僅存於本機。BYOK 金鑰存於 iOS Keychain。我們不出售你的對話資料。</p>
+      </div>
+    </div>
+
+    <!-- Simplified Chinese -->
+    <div data-lang="zh-Hans">
+      <div class="card">
+        <h2>I·Am 是什么？</h2>
+        <p>I·Am 是一款灵性个人成长 App，聚焦<strong>内在对话</strong>，非宗教教义。每日选择你的 <em>Being</em>（今日的存在状态），通过引导式对话反思，并以 Be–Do–Have 设计生命。</p>
+        <ul>
+          <li><strong>今日</strong> — 每日之门、连续节奏、今日 Being</li>
+          <li><strong>对话</strong> — 3,000+ 本机原创模板；可选 BYOK 深度 AI（自备 API）</li>
+          <li><strong>生命设计</strong> — Be、Do、Have 每周规划</li>
+          <li><strong>早晚推送</strong> — 各 900+ 句原创启发语（可用两年以上不重复）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>进阶方案</h2>
+        <p class="pricing">月订、年订（年订享首月免费）、或终身买断。由 Apple 管理；利润 10% 用于捐赠。详见 App 内说明。</p>
+      </div>
+      <div class="card">
+        <h2>隐私优先</h2>
+        <p>对话默认仅存于本机。BYOK 密钥存于 iOS Keychain。我们不出售你的对话数据。</p>
+      </div>
+    </div>
+
+    <!-- Japanese -->
+    <div data-lang="ja">
+      <div class="card">
+        <h2>I·Am とは</h2>
+        <p>I·Am は内なる対話のためのパーソナル成長アプリです（宗教教義ではありません）。毎日 <em>Being</em>（今日の在り方）を選び、ガイド付きの対話で振り返り、Be–Do–Have で人生を設計します。</p>
+        <ul>
+          <li><strong>今日</strong> — デイリーゲート、連続記録、今日の Being</li>
+          <li><strong>対話</strong> — 3,000以上の端末内オリジナルテンプレート、BYOK AI（任意）</li>
+          <li><strong>ライフデザイン</strong> — Be / Do / Have の週次計画</li>
+          <li><strong>朝夕</strong> — 各900以上のオリジナル引用（2年以上ほぼ重複なし）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>プレミアム</h2>
+        <p class="pricing">月額・年額（年額は初月無料）・買い切り。Apple 経由。利益の10%を寄付。</p>
+      </div>
+      <div class="card">
+        <h2>プライバシー</h2>
+        <p>対話は既定で端末内。BYOK キーは Keychain に保存。対話データの販売はしません。</p>
+      </div>
+    </div>
+
+    <!-- Korean -->
+    <div data-lang="ko">
+      <div class="card">
+        <h2>I·Am 이란</h2>
+        <p>I·Am 은 종교 교리가 아닌 <strong>내면 대화</strong>를 위한 개인 성장 앱입니다. 매일 <em>Being</em>(오늘의 존재)을 고르고, 안내 대화로 성찰하며 Be–Do–Have 로 삶을 설계합니다.</p>
+        <ul>
+          <li><strong>오늘</strong> — 데일리 게이트, 연속 기록, 오늘의 Being</li>
+          <li><strong>대화</strong> — 3,000+ 기기 내 오리지널 템플릿, BYOK AI(선택)</li>
+          <li><strong>라이프 디자인</strong> — Be / Do / Have 주간 계획</li>
+          <li><strong>아침·저녁</strong> — 각 900+ 오리지널 문장(2년 이상 거의 중복 없음)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>프리미엄</h2>
+        <p class="pricing">월간·연간(연간 첫 달 무료)·평생. Apple 관리. 수익 10% 기부.</p>
+      </div>
+      <div class="card">
+        <h2>개인정보</h2>
+        <p>대화는 기본적으로 기기에만 저장. BYOK 키는 Keychain. 대화 데이터를 판매하지 않습니다.</p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="privacy.html">Privacy / 隱私權</a>
+      <a href="eula.html">Terms (EULA)</a>
+    </div>
+    <footer>© I·Am · com.vajrahowly.iam</footer>
+  </div>
+
+  <script>
+    const taglines = {
+      en: "Dialogue with your inner self",
+      "zh-Hant": "與內在的自己對話",
+      "zh-Hans": "与内在的自己对话",
+      ja: "内なる自分との対話",
+      ko: "내면의 나와의 대화"
+    };
+    const buttons = document.querySelectorAll("[data-set-lang]");
+    const panels = document.querySelectorAll("[data-lang]");
+    const taglineEl = document.getElementById("page-tagline");
+
+    function setLang(lang) {
+      document.documentElement.lang = lang === "zh-Hant" ? "zh-Hant" : lang === "zh-Hans" ? "zh-Hans" : lang;
+      buttons.forEach(b => b.classList.toggle("active", b.dataset.setLang === lang));
+      panels.forEach(p => p.classList.toggle("visible", p.dataset.lang === lang));
+      taglineEl.textContent = taglines[lang] || taglines.en;
+      try { localStorage.setItem("iam-web-lang", lang); } catch (_) {}
+    }
+
+    buttons.forEach(b => b.addEventListener("click", () => setLang(b.dataset.setLang)));
+
+    (function init() {
+      let lang = "en";
+      try {
+        const saved = localStorage.getItem("iam-web-lang");
+        if (saved && taglines[saved]) lang = saved;
+      } catch (_) {}
+      const nav = navigator.language || "";
+      if (lang === "en") {
+        if (nav.startsWith("zh-TW") || nav.startsWith("zh-HK")) lang = "zh-Hant";
+        else if (nav.startsWith("zh")) lang = "zh-Hans";
+        else if (nav.startsWith("ja")) lang = "ja";
+        else if (nav.startsWith("ko")) lang = "ko";
+      }
+      setLang(lang);
+    })();
+  </script>
+</body>
+</html>
